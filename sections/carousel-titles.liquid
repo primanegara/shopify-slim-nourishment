@@ -1,0 +1,92 @@
+{%- assign row = section.settings -%}
+{%- assign autoplay = row.autoplay -%}
+{%- assign smart_speed = row.smart_speed -%}
+{%- assign autoplay_timeout = row.autoplay_timeout -%}
+{%- assign autoplay_speed = row.autoplay_speed -%}
+
+<div class="carousel-products-title-wrapper">
+  <div class="carousel-products-title owl-carousel owl-theme">
+    {% for block in section.blocks %}
+    {% assign title = block.settings.item_title %}
+      <div class="item-title">
+        {{ title }}
+      </div>
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "Carousel Title",
+    "settings": [
+		{
+			"type": "header",
+			"content": "Carousel config"
+		},
+		{
+          "type": "checkbox",
+          "id": "autoplay",
+          "label": "Autoplay",
+          "default": true
+		},
+		{
+          "type": "range",
+          "id": "smart_speed",
+          "label": "Smart speed",
+          "default": 500,
+          "min": 300,
+          "max": 1000,
+          "step": 100,
+          "info": "default: 500"
+		},
+		{
+          "type": "range",
+          "id": "autoplay_timeout",
+          "label": "Autoplay timeout",
+          "default": 2500,
+          "min": 2000,
+          "max": 6000,
+          "step": 500,
+          "info": "default: 2500"
+		},
+		{
+          "type": "range",
+          "id": "autoplay_speed",
+          "label": "Autoplay speed",
+          "default": 400,
+          "min": 200,
+          "max": 1000,
+          "step": 100,
+          "info": "default: 400"
+		}
+	],
+    "blocks": [
+      {
+        "type": "carousel_titles",
+        "name": "Item",
+        "settings": [
+          {
+            "type": "text",
+            "id": "item_title",
+            "label": "Title"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+<script>
+  $('.carousel-products-title').owlCarousel({
+    loop: true,
+    items: 1,
+    nav: false,
+    dots: false,
+    autoplay: {{ autoplay }},
+    smartSpeed: {{ smart_speed }},
+    autoplayTimeout: {{ autoplay_timeout }},
+    autoplaySpeed: {{ autoplay_speed }},
+    navText: ['<span class="icon-keyboard-arrow-left"></span>','<span class="icon-keyboard-arrow-right"></span>']
+  });
+</script>
+  

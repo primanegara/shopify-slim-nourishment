@@ -1,0 +1,185 @@
+{%- comment -%}
+  Comments may not appear right after they are submitted, either to be checked by Shopify's spam filter
+  or to await moderation. When a comment is submitted, the browser is redirected to a page
+  that includes the new comment id in its URL.
+    Example: http://shopname.myshopify.com/blogs/news/2022072-my-post?comment=3721372
+	{% section 'article-template' %}
+{%- endcomment -%}
+
+<div class="sec-bg-full color-black">
+  <div class="col-wrapper">
+
+    <div class="side-left">
+      {% section 'main-content-left' %}
+    </div><!-- End Side Left -->
+
+    <div class="side-right">
+      
+      <div id="modal-blog-detail" uk-modal class="modal-rightside-wrapper uk-open d-block">
+        <div class="uk-modal-dialog modal-rightside-content">
+          <a href="/" class="modal-rightside-close-btn">
+            <i class="icon-cross"></i>
+          </a>
+          <div class="uk-modal-body uk-height-1-1 modal-rightside-body for-common" uk-overflow-auto>
+            <div class="modal-tidy-inner">
+              <div class="modal-tidy-content">
+                {% section 'article-template-v1' %}
+              </div><!-- End Tidy Content -->
+              <div class="modal-tidy-footer">
+                {% include 'footer-links' %}
+              </div><!-- End Tidy Footer -->
+            </div><!-- End Tidy Inner -->
+          </div><!-- End Modal Body -->
+        </div><!-- End Modal Dialog -->
+      </div><!-- End Modal Wrapper -->
+      <!-- End Modal: Blog Detail -->      
+
+      <!-- ========================== GLOBAL MODAL WINDOW ========================== -->
+      <!-- Modal: Terms -->
+      <div id="modal-terms" uk-modal="stack: true" class="modal-rightside-wrapper">
+        <div class="uk-modal-dialog modal-rightside-content">
+          <button class="uk-modal-close-default modal-rightside-close-btn" type="button" uk-close>
+            <i class="icon-cross"></i>
+          </button>
+          <div class="uk-modal-body uk-height-1-1 modal-rightside-body for-common" uk-overflow-auto>
+            <div class="modal-tidy-inner">
+              <div class="modal-tidy-content">
+                {% section 'modal-terms' %}
+              </div><!-- End Tidy Content -->
+              <div class="modal-tidy-footer">
+                {% include 'footer-links' %}
+              </div><!-- End Tidy Footer -->
+            </div><!-- End Tidy Inner -->
+          </div><!-- End Modal Body -->
+        </div><!-- End Modal Dialog -->
+      </div><!-- End Modal Wrapper -->
+      <!-- End Modal: Terms -->
+
+      <!-- Modal: Privacy -->
+      <div id="modal-privacy" uk-modal="stack: true" class="modal-rightside-wrapper">
+        <div class="uk-modal-dialog modal-rightside-content">
+          <button class="uk-modal-close-default modal-rightside-close-btn" type="button" uk-close>
+            <i class="icon-cross"></i>
+          </button>
+          <div class="uk-modal-body uk-height-1-1 modal-rightside-body for-common" uk-overflow-auto>
+            <div class="modal-tidy-inner">
+              <div class="modal-tidy-content">
+                {% section 'modal-privacy' %}
+              </div><!-- End Tidy Content -->
+              <div class="modal-tidy-footer">
+                {% include 'footer-links' %}
+              </div><!-- End Tidy Footer -->
+            </div><!-- End Tidy Inner -->
+          </div><!-- End Modal Body -->
+        </div><!-- End Modal Dialog -->
+      </div><!-- End Modal Wrapper -->
+      <!-- End Modal: Privacy -->
+      
+      <!-- Modal: FAQS -->
+      <div id="modal-faq" uk-modal="stack: true" class="modal-rightside-wrapper">
+        <div class="uk-modal-dialog modal-rightside-content">
+          <button class="uk-modal-close-default modal-rightside-close-btn" type="button" uk-close>
+            <i class="icon-cross"></i>
+          </button>
+          <div class="uk-modal-body uk-height-1-1 modal-rightside-body for-common" uk-overflow-auto>
+            <div class="modal-tidy-inner">
+              <div class="modal-tidy-content">
+                {% section 'modal-faqs' %}
+              </div><!-- End Tidy Content -->
+              <div class="modal-tidy-footer">
+                {% include 'footer-links' %}
+              </div><!-- End Tidy Footer -->
+            </div><!-- End Tidy Inner -->
+          </div><!-- End Modal Body -->
+        </div><!-- End Modal Dialog -->
+      </div><!-- End Modal Wrapper -->
+      <!-- End Modal: FAQS -->      
+
+      <!-- Modal: Contact -->
+      <div id="modal-contact" uk-modal class="modal-rightside-wrapper">
+        <div class="uk-modal-dialog modal-rightside-content">
+          <button class="uk-modal-close-default modal-rightside-close-btn" type="button" uk-close>
+            <i class="icon-cross"></i>
+          </button>
+          <div class="uk-modal-body uk-height-1-1 modal-rightside-body for-common" uk-overflow-auto>
+            <div class="modal-tidy-inner">
+              <div class="modal-tidy-content">
+                {% if settings.show_contact == 'yes' %}
+                <div class="main-content-middle">
+                  <h2 class="main-title text-center">
+                    {{ pages[settings.content_contact].title }}
+                  </h2>
+                  <div class="static-content">
+                    {{ pages[settings.content_contact].content }}
+                    <div class="contact-form-inner primary-color">
+                      <div class="contact-form">
+                        {% include 'contact-form' %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}                
+              </div><!-- End Tidy Content -->
+              <div class="modal-tidy-footer">
+                {% include 'footer-links' %}
+              </div><!-- End Tidy Footer -->
+            </div><!-- End Tidy Inner -->
+          </div><!-- End Modal Body -->
+        </div><!-- End Modal Dialog -->
+      </div><!-- End Modal Wrapper -->
+      <!-- End Modal: Contact -->
+      
+      <!-- Modal: Quiz -->
+      {% section 'quiz-lvl-1' %}
+      {% section 'quiz-lvl-2-1' %}
+      {% section 'quiz-lvl-2-2' %}
+      {% section 'quiz-lvl-3' %}
+      {% section 'quiz-lvl-4' %}
+      <!-- End Modal: Quiz -->         
+      <!-- ========================== END GLOBAL MODAL WINDOW ========================== -->      
+    </div><!-- End Side Right -->
+
+  </div><!-- End Col Wrapper -->
+</div><!-- End Sec BG -->
+
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "articleBody": {{ article.content | strip_html | json }},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ shop.url | append: page.url | json }}
+  },
+  "headline": {{ article.title | json }},
+  {% if article.excerpt != blank %}
+    "description": {{ article.excerpt | strip_html | json }},
+  {% endif %}
+  {% if article.image %}
+    {% assign image_size = article.image.width | append: 'x' %}
+    "image": [
+      {{ article | img_url: image_size | prepend: "https:" | json }}
+    ],
+  {% endif %}
+  "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "author": {
+    "@type": "Person",
+    "name": {{ article.author | json }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    {% if page_image %}
+      {% assign image_size = page_image.width | append: 'x' %}
+      "logo": {
+        "@type": "ImageObject",
+        "height": {{ page_image.height | json }},
+        "url": {{ page_image | img_url: image_size | prepend: "https:" | json }},
+        "width": {{ page_image.width | json }}
+      },
+    {% endif %}
+    "name": {{ shop.name | json }}
+  }
+}
+</script>

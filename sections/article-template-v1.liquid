@@ -1,0 +1,46 @@
+{%- assign row = section.settings -%}
+{%- assign back_btn_text = row.back_btn_text -%}
+{%- assign article_thumb_image = article.image | img_url: 'master' -%}
+
+<div class="blog-detail-item">
+  <div class="blog-detail-item-title">
+    {{ article.title }}
+  </div>
+
+  {% if article.image %}
+  <div class="blog-detail-item-image">
+    <img src="{{ article_thumb_image }}" alt="{{ article.title }}" />
+  </div>
+  {% endif %}
+
+  <div class="blog-detail-item-desc">
+    {{ article.content }}
+  </div>
+
+  <div class="blog-detail-item-backbtn">
+    <div class="blog-detail-item-backbtn-inner">
+      <a href="{{ blog.url }}" class="blog-detail-item-backbtn-link">
+        <div class="blog-detail-item-backbtn-link-icon"><i class="icon-arrow-left2"></i></div>
+        <div class="blog-detail-item-backbtn-link-text">{{ back_btn_text }}</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Posts",
+  "settings": [
+	{
+      "type": "header",
+      "content": "Back button"
+    },
+    {
+      "label": "Text",
+      "type": "text",
+      "id": "back_btn_text",
+      "default": "Back to blog"
+    }
+  ]
+}
+{% endschema %}

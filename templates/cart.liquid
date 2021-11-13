@@ -1,0 +1,144 @@
+{% comment %}
+  The contents of the cart.liquid template can be found in /sections/cart-template.liquid
+{% endcomment %}
+
+<div class="sec-bg-full color-black">
+  <div class="col-wrapper">
+
+    <div class="side-left">
+      {% section 'main-content-left' %}
+    </div><!-- End Side Left -->
+
+    <div class="side-right">
+
+      <!-- Modal: Cart -->
+      <div id="modal-products-featured" uk-modal class="modal-rightside-wrapper uk-open d-block">
+        <div class="uk-modal-dialog modal-rightside-content">
+          <a href="/" class="modal-rightside-close-btn">
+            <i class="icon-cross"></i>
+          </a>
+          <div class="uk-modal-body uk-height-1-1 modal-rightside-body for-cart" uk-overflow-auto>
+            <div class="modal-tidy-inner">
+              <div class="modal-tidy-content">
+                <div class="page-cart">
+                  {% section 'cart-template' %}
+                </div>                
+              </div><!-- End Tidy Content -->
+              <div class="modal-tidy-footer">
+                {% include 'footer-links' %}
+              </div><!-- End Tidy Footer -->
+            </div><!-- End Tidy Inner -->
+          </div><!-- End Modal Body -->
+        </div><!-- End Modal Dialog -->
+      </div><!-- End Modal Wrapper -->
+      <!-- End Modal: Cart -->
+
+      <!-- ========================== GLOBAL MODAL WINDOW ========================== -->
+      <!-- Modal: Terms -->
+      <div id="modal-terms" uk-modal="stack: true" class="modal-rightside-wrapper">
+        <div class="uk-modal-dialog modal-rightside-content">
+          <button class="uk-modal-close-default modal-rightside-close-btn" type="button" uk-close>
+            <i class="icon-cross"></i>
+          </button>
+          <div class="uk-modal-body uk-height-1-1 modal-rightside-body for-common" uk-overflow-auto>
+            <div class="modal-tidy-inner">
+              <div class="modal-tidy-content">
+                {% section 'modal-terms' %}
+              </div><!-- End Tidy Content -->
+              <div class="modal-tidy-footer">
+                {% include 'footer-links' %}
+              </div><!-- End Tidy Footer -->
+            </div><!-- End Tidy Inner -->
+          </div><!-- End Modal Body -->
+        </div><!-- End Modal Dialog -->
+      </div><!-- End Modal Wrapper -->
+      <!-- End Modal: Terms -->
+
+      <!-- Modal: Privacy -->
+      <div id="modal-privacy" uk-modal="stack: true" class="modal-rightside-wrapper">
+        <div class="uk-modal-dialog modal-rightside-content">
+          <button class="uk-modal-close-default modal-rightside-close-btn" type="button" uk-close>
+            <i class="icon-cross"></i>
+          </button>
+          <div class="uk-modal-body uk-height-1-1 modal-rightside-body for-common" uk-overflow-auto>
+            <div class="modal-tidy-inner">
+              <div class="modal-tidy-content">
+                {% section 'modal-privacy' %}
+              </div><!-- End Tidy Content -->
+              <div class="modal-tidy-footer">
+                {% include 'footer-links' %}
+              </div><!-- End Tidy Footer -->
+            </div><!-- End Tidy Inner -->
+          </div><!-- End Modal Body -->
+        </div><!-- End Modal Dialog -->
+      </div><!-- End Modal Wrapper -->
+      <!-- End Modal: Privacy -->
+      
+      <!-- Modal: FAQS -->
+      <div id="modal-faq" uk-modal="stack: true" class="modal-rightside-wrapper">
+        <div class="uk-modal-dialog modal-rightside-content">
+          <button class="uk-modal-close-default modal-rightside-close-btn" type="button" uk-close>
+            <i class="icon-cross"></i>
+          </button>
+          <div class="uk-modal-body uk-height-1-1 modal-rightside-body for-common" uk-overflow-auto>
+            <div class="modal-tidy-inner">
+              <div class="modal-tidy-content">
+                {% section 'modal-faqs' %}
+              </div><!-- End Tidy Content -->
+              <div class="modal-tidy-footer">
+                {% include 'footer-links' %}
+              </div><!-- End Tidy Footer -->
+            </div><!-- End Tidy Inner -->
+          </div><!-- End Modal Body -->
+        </div><!-- End Modal Dialog -->
+      </div><!-- End Modal Wrapper -->
+      <!-- End Modal: FAQS -->      
+
+      <!-- Modal: Contact -->
+      <div id="modal-contact" uk-modal class="modal-rightside-wrapper">
+        <div class="uk-modal-dialog modal-rightside-content">
+          <button class="uk-modal-close-default modal-rightside-close-btn" type="button" uk-close>
+            <i class="icon-cross"></i>
+          </button>
+          <div class="uk-modal-body uk-height-1-1 modal-rightside-body for-common" uk-overflow-auto>
+            <div class="modal-tidy-inner">
+              <div class="modal-tidy-content">
+                {% if settings.show_contact == 'yes' %}
+                <div class="main-content-middle">
+                  <h2 class="main-title text-center">
+                    {{ pages[settings.content_contact].title }}
+                  </h2>
+                  <div class="static-content">
+                    {{ pages[settings.content_contact].content }}
+                    <div class="contact-form-inner primary-color">
+                      <div class="contact-form">
+                        {% include 'contact-form' %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}                
+              </div><!-- End Tidy Content -->
+              <div class="modal-tidy-footer">
+                {% include 'footer-links' %}
+              </div><!-- End Tidy Footer -->
+            </div><!-- End Tidy Inner -->
+          </div><!-- End Modal Body -->
+        </div><!-- End Modal Dialog -->
+      </div><!-- End Modal Wrapper -->
+      <!-- End Modal: Contact -->
+      
+      <!-- Modal: Quiz -->
+      {% section 'quiz-lvl-1' %}
+      {% section 'quiz-lvl-2-1' %}
+      {% section 'quiz-lvl-2-2' %}
+      {% section 'quiz-lvl-3' %}
+      {% section 'quiz-lvl-4' %}
+      <!-- End Modal: Quiz -->         
+      <!-- ========================== END GLOBAL MODAL WINDOW ========================== -->      
+    </div><!-- End Side Right -->
+
+  </div><!-- End Col Wrapper -->
+</div><!-- End Sec BG -->
+
+

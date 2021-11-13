@@ -1,0 +1,100 @@
+{% assign row = section.settings %}
+
+<div class="main-content-middle">
+  <div class="products-featured-sack-wrapper">
+    <div class="products-featured-sack">
+      {%- assign collection = collections[section.settings.block_collection] -%}
+      {% for product in collection.products %}
+      {% include 'card-featured-product', product: product %}
+      {% endfor %}
+    </div><!-- End Sack -->
+  </div><!-- End Sack Wrapper -->
+</div>
+
+{% schema %}
+{
+  "name": "Featured product (v1)",
+  "class": "index-section index-section--featured-product-v1",
+  "settings": [
+    {
+      "label": "Collection",
+      "type": "collection",
+      "id": "block_collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "product_vendor_enable",
+      "label": "Show vendor"
+    },
+    {
+      "type": "checkbox",
+      "id": "product_quantity_enable",
+      "label": "Show quantity selector"
+    },
+    {
+      "type": "select",
+      "id": "product_image_zoom_type",
+      "label": "Image zoom type",
+      "options": [
+        {
+          "value": "lightbox",
+          "label": "Lightbox"
+        },
+        {
+          "value": "zoom-in",
+          "label": "Zoom-in"
+        },
+        {
+          "value": "no-zoom",
+          "label": "No zoom"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "social_sharing",
+      "label": "Show social sharing buttons",
+      "default": true,
+      "info": "Edit social accounts in General settings"
+    },
+    {
+      "type": "header",
+      "content": "Product options form"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_payment_button",
+      "label": "Show dynamic checkout button",
+      "info":"Each customer will see their preferred payment method from those available on your store, such as PayPal or Apple Pay. [Learn more](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "add_to_cart_width",
+      "label": "Variant picker and button size",
+      "default": "small",
+      "options": [
+        {
+          "value": "small",
+          "label": "Small"
+        },
+        {
+          "value": "medium",
+          "label": "Medium"
+        },
+        {
+          "value": "large",
+          "label": "Large"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured product (v1)",
+      "category": "Product"
+    }
+  ]
+
+}
+{% endschema %}

@@ -1,0 +1,32 @@
+{% assign row = section.settings %}
+
+{% if row.show == 'yes' %}
+<h2 class="main-title text-center">
+  {{ pages[row.page_id].title }}
+</h2>
+<div class="static-content">
+  {{ pages[row.page_id].content }}
+</div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "About (Modal)",
+    "settings": [
+      {
+        "label": "Choose Page",
+        "type": "page",
+        "id": "page_id"
+      },
+      {
+        "label": "Show",
+        "type": "select",
+        "id": "show",
+        "options": [ 
+          { "value": "yes", "label": "Yes"},
+          { "value": "no", "label": "No"}
+		    ]
+      }
+	  ]
+  }
+{% endschema %}

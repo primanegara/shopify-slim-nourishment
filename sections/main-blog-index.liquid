@@ -1,0 +1,65 @@
+{% comment %}
+THIS IS NOT USED AGAIN
+{% endcomment %}
+
+{%- assign blog_articles_sort = blogs.news.articles -%}
+{%- assign row = section.settings -%}
+
+<div class="blog-index-wrapper"> 
+  
+  {% for article in blog_articles_sort %}
+  {%- assign thumb = article.image | img_url: '600x' -%}
+  
+   <div class="blog-index-item">
+      <div class="blog-index-item-image"></div>
+      <div class="blog-index-item-title">
+        <h3>
+          {{ article.title | escape }}
+        </h3>
+      </div>
+      <div class="blog-index-item-desc">
+        <p>
+          {% if article.excerpt.size > 0 %}
+          	{{ article.excerpt }}
+          {% else %}
+          	{{ article.content | truncate: 500 }}
+          {% endif %}
+        </p>
+      </div>
+      <div class="blog-index-item-act">
+        <div class="blog-index-item-act-readmore">
+          <a href="#modal-blog-detail-{{ article.handle | handleize }}" uk-toggle class="primary-color">
+            {{ row.block_btn_detail }}
+          </a>
+          
+          {% comment %}
+          <a href="{{ article.url }}" class="primary-color">
+            {{ row.block_btn_detail }}
+          </a>
+          {% endcomment %}
+        </div>
+      </div>
+    </div><!-- End Item -->
+  {% endfor %}
+  
+</div><!-- End Wrapper -->
+
+{% schema %}
+  {
+    "name": "Blog (Config)",
+    "settings": [
+		{
+	        "label": "Button",
+    	    "type": "text",
+        	"id": "block_btn_detail",
+			"default": "Viewpost"
+		}
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,75 @@
+{% assign row = section.settings %}
+
+{% if row.show == 'yes' %}
+<h2 class="main-title text-center">
+  {{ pages[row.page_id].title }}
+</h2>
+
+<div class="static-content">  
+  <div class="faq-wrapper">
+    <ul uk-accordion="multiple: true">
+      {% for block in section.blocks %}
+      {%- assign data = block.settings -%}
+        {% if data.item_show == 'yes' %}
+        <li class="faq-item">
+          <a class="uk-accordion-title faq-item-a" href="#">
+            {{ data.item_title }}
+          </a>
+          <div class="uk-accordion-content faq-item-desc">
+            {{ data.item_desc }}
+          </div>
+        </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+  {{ pages[row.page_id].content }}
+</div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "FAQS (Modal)",
+    "settings": [
+      {
+        "label": "Choose Page",
+        "type": "page",
+        "id": "page_id"
+      },      
+      {
+        "label": "Show",
+        "type": "select",
+        "id": "show",
+        "options": [ 
+          { "value": "yes", "label": "Yes" },
+          { "value": "no", "label": "No" }
+		    ]
+      }
+	],
+  "blocks": [{
+    "type": "items_faq",
+    "name": "FAQ Lists",
+    "settings": [
+      {
+        "label": "Title",
+        "type": "text",
+        "id": "item_title"
+      },
+      {
+        "label": "Description",
+        "type": "richtext",
+        "id": "item_desc"
+      },
+      {
+        "label": "Show",
+        "type": "select",
+        "id": "item_show",
+        "options": [ 
+          { "value": "yes", "label": "Yes"},
+          { "value": "no", "label": "No"}
+        ]
+      }
+    ]
+  }]
+  }
+{% endschema %}

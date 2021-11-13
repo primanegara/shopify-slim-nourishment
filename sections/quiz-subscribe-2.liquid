@@ -1,0 +1,110 @@
+{%- assign row = section.settings -%}
+{%- assign title = row.block_title -%}
+{%- assign desc = row.block_desc -%}
+{%- assign form_email = row.form_email -%}
+{%- assign form_btn = row.form_btn -%}
+{%- assign form_notes = row.form_notes -%}
+{%- assign page_subscribe_successfully = row.page_subscribe_successfully -%}
+{%- assign notif_coupon_code = row.notif_coupon_code -%}
+{%- assign notif_linktext = row.notif_linktext -%}
+{%- assign notif_url = row.notif_url -%}
+
+<div class="static-content-quiz text-center">
+  <div class="static-content-quiz-inner">
+    <div class="main-title-as-p text-center">
+      {{ title }}
+    </div>
+
+    <div class="sub-title">
+      {{ desc }}
+    </div>
+
+    {%- assign formId = 'Quiz_s2_' | append: section.id -%}
+    {% form 'customer', id: formId, novalidate: 'novalidate', class: 'contact-form form-single-field' %}
+    {%- if form.posted_successfully? -%}
+    <div class="box-coupon-code">
+      <div class="box-coupon-code-inner">
+        {{ notif_coupon_code }}
+      </div>
+      <div class="box-coupon-code-btn">
+        <a href="{{ notif_url }}">
+          {{ notif_linktext }}
+        </a>
+      </div>
+    </div><!-- End Coupon Code -->
+    {% else %}
+    <div class="box-subscribe">
+      <div class="box-subscribe-inner">
+        {% include 'subscribe-form-quiz' %}
+      </div>
+    </div>
+    {% endif %}
+    {% endform %}
+  </div>
+</div><!-- End Static Content -->
+
+{% schema %}
+  {
+    "name": "Quiz (#2) Subscribe",
+    "settings": [
+      {
+        "type": "richtext",
+        "id": "block_title",
+        "label": "Title"
+      },
+      {
+        "type": "richtext",
+        "id": "block_desc",
+        "label": "Description"
+      },
+      {
+        "type": "header",
+        "content": "Form"
+      },
+      {
+        "type": "text",
+        "id": "form_email",
+        "label": "Placeholder",
+		"default": "Email"
+      },
+      {
+        "type": "text",
+        "id": "form_btn",
+        "label": "Button text",
+		"default": "Submit"
+      },
+      {
+        "type": "richtext",
+        "id": "form_notes",
+        "label": "Notes"
+      },
+      {
+        "type": "header",
+        "content": "Notification"
+      },
+      {
+        "type": "richtext",
+        "id": "notif_coupon_code",
+        "label": "Coupon Code"
+      },
+      {
+        "type": "text",
+        "id": "notif_linktext",
+        "label": "Link text"
+      },
+      {
+        "type": "url",
+        "id": "notif_url",
+        "label": "URL"
+      }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
+

@@ -1,0 +1,266 @@
+<div class="sec-bg-full color-black">
+  <div class="col-wrapper">
+    <div class="side-left">
+      {% section 'main-content-left' %}
+    </div><!-- End Side Left -->
+
+    <div class="side-right for-home-page">
+
+      <!-- Modal: About -->
+      <div id="modal-about" uk-modal class="modal-rightside-wrapper">
+        <div class="uk-modal-dialog modal-rightside-content">
+          <button class="uk-modal-close-default modal-rightside-close-btn" type="button" uk-close>
+            <i class="icon-cross"></i>
+          </button>
+          <div class="uk-modal-body uk-height-1-1 modal-rightside-body for-common" uk-overflow-auto>
+            <div class="modal-tidy-inner">
+              <div class="modal-tidy-content">
+                {% section 'modal-about' %}
+              </div><!-- End Tidy Content -->
+              <div class="modal-tidy-footer">
+                {% include 'footer-links' %}
+              </div><!-- End Tidy Footer -->
+            </div><!-- End Tidy Inner -->
+          </div><!-- End Modal Body -->
+        </div><!-- End Modal Dialog -->
+      </div><!-- End Modal Wrapper -->
+      <!-- End Modal: About -->
+
+      <!-- Modal: Product Featured -->
+      <div id="modal-products-featured" uk-modal class="modal-rightside-wrapper">
+        <div class="uk-modal-dialog modal-rightside-content">
+          <button class="uk-modal-close-default modal-rightside-close-btn" type="button" uk-close>
+            <i class="icon-cross"></i>
+          </button>
+          <div class="uk-modal-body uk-height-1-1 modal-rightside-body for-common" uk-overflow-auto>
+            <div class="modal-tidy-inner">
+              <div class="modal-tidy-content">
+                {% section 'main-categories-list' %}
+                {% include 'subscribe-form-product-index' %}
+                {% section 'featured-product-v1' %}                
+              </div><!-- End Tidy Content -->
+              <div class="modal-tidy-footer">
+                {% include 'footer-links' %}
+              </div><!-- End Tidy Footer -->
+            </div><!-- End Tidy Inner -->
+          </div><!-- End Modal Body -->
+        </div><!-- End Modal Dialog -->
+      </div><!-- End Modal Wrapper -->
+      <!-- End Modal: Product Featured -->
+      
+      <!-- ========================== GLOBAL MODAL WINDOW ========================== -->
+      <!-- Modal: Terms -->
+      <div id="modal-terms" uk-modal="stack: true" class="modal-rightside-wrapper">
+        <div class="uk-modal-dialog modal-rightside-content">
+          <button class="uk-modal-close-default modal-rightside-close-btn" type="button" uk-close>
+            <i class="icon-cross"></i>
+          </button>
+          <div class="uk-modal-body uk-height-1-1 modal-rightside-body for-common" uk-overflow-auto>
+            <div class="modal-tidy-inner">
+              <div class="modal-tidy-content">
+                {% section 'modal-terms' %}
+              </div><!-- End Tidy Content -->
+              <div class="modal-tidy-footer">
+                {% include 'footer-links' %}
+              </div><!-- End Tidy Footer -->
+            </div><!-- End Tidy Inner -->
+          </div><!-- End Modal Body -->
+        </div><!-- End Modal Dialog -->
+      </div><!-- End Modal Wrapper -->
+      <!-- End Modal: Terms -->
+
+      <!-- Modal: Privacy -->
+      <div id="modal-privacy" uk-modal="stack: true" class="modal-rightside-wrapper">
+        <div class="uk-modal-dialog modal-rightside-content">
+          <button class="uk-modal-close-default modal-rightside-close-btn" type="button" uk-close>
+            <i class="icon-cross"></i>
+          </button>
+          <div class="uk-modal-body uk-height-1-1 modal-rightside-body for-common" uk-overflow-auto>
+            <div class="modal-tidy-inner">
+              <div class="modal-tidy-content">
+                {% section 'modal-privacy' %}
+              </div><!-- End Tidy Content -->
+              <div class="modal-tidy-footer">
+                {% include 'footer-links' %}
+              </div><!-- End Tidy Footer -->
+            </div><!-- End Tidy Inner -->
+          </div><!-- End Modal Body -->
+        </div><!-- End Modal Dialog -->
+      </div><!-- End Modal Wrapper -->
+      <!-- End Modal: Privacy -->
+      
+      <!-- Modal: FAQS -->
+      <div id="modal-faq" uk-modal="stack: true" class="modal-rightside-wrapper">
+        <div class="uk-modal-dialog modal-rightside-content">
+          <button class="uk-modal-close-default modal-rightside-close-btn" type="button" uk-close>
+            <i class="icon-cross"></i>
+          </button>
+          <div class="uk-modal-body uk-height-1-1 modal-rightside-body for-common" uk-overflow-auto>
+            <div class="modal-tidy-inner">
+              <div class="modal-tidy-content">
+                {% section 'modal-faqs' %}
+              </div><!-- End Tidy Content -->
+              <div class="modal-tidy-footer">
+                {% include 'footer-links' %}
+              </div><!-- End Tidy Footer -->
+            </div><!-- End Tidy Inner -->
+          </div><!-- End Modal Body -->
+        </div><!-- End Modal Dialog -->
+      </div><!-- End Modal Wrapper -->
+      <!-- End Modal: FAQS -->      
+
+      <!-- Modal: Contact -->
+      <div id="modal-contact" uk-modal class="modal-rightside-wrapper">
+        <div class="uk-modal-dialog modal-rightside-content">
+          <button class="uk-modal-close-default modal-rightside-close-btn" type="button" uk-close>
+            <i class="icon-cross"></i>
+          </button>
+          <div class="uk-modal-body uk-height-1-1 modal-rightside-body for-common" uk-overflow-auto>
+            <div class="modal-tidy-inner">
+              <div class="modal-tidy-content">
+                {% if settings.show_contact == 'yes' %}
+                <div class="main-content-middle">
+                  <h2 class="main-title text-center">
+                    {{ pages[settings.content_contact].title }}
+                  </h2>
+                  <div class="static-content">
+                    {{ pages[settings.content_contact].content }}
+                    <div class="contact-form-inner primary-color">
+                      <div class="contact-form">
+                        {% include 'contact-form' %}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}                
+              </div><!-- End Tidy Content -->
+              <div class="modal-tidy-footer">
+                {% include 'footer-links' %}
+              </div><!-- End Tidy Footer -->
+            </div><!-- End Tidy Inner -->
+          </div><!-- End Modal Body -->
+        </div><!-- End Modal Dialog -->
+      </div><!-- End Modal Wrapper -->
+      <!-- End Modal: Contact -->
+      
+      <!-- Modal: Quiz -->
+      {% section 'quiz-lvl-1' %}
+      {% section 'quiz-lvl-2-1' %}
+      {% section 'quiz-lvl-2-2' %}
+      {% section 'quiz-lvl-3' %}
+      {% section 'quiz-lvl-4' %}
+      <!-- End Modal: Quiz -->         
+      <!-- ========================== END GLOBAL MODAL WINDOW ========================== -->
+
+      <div class="content-right">
+        {% section 'carousel-titles' %}
+        <div class="carousel-products-wrapper">   
+          <div class="carousel-products-inner">
+          {% section 'carousel-products' %}
+          </div>
+        </div>
+      </div><!-- End Content Right -->
+
+      <div id="footer-right" class="footer-right">
+        <div class="footer-right-wrapper">
+          <div class="col-left">
+            <div id="cit_carousel" class="carousel-thumbs-wrapper">
+              {% section 'carousel-image-with-title' %}
+            </div><!-- End Wrapper -->
+          </div><!-- End Col Left -->
+
+          <div class="col-right">
+            <div class="view-all-products primary-color">
+              <a href="{{ settings.link_1_modalid }}" uk-toggle>
+                <p>{{ settings.link_1_text }}</p>
+              </a>
+            </div>
+
+            <div class="f-links">
+              <div class="f-links-top">
+                <div class="f-links-top-left">
+                  <a href="{{ settings.link_2_modalid }}" uk-toggle>{{ settings.link_2_text }}</a>
+                </div><!-- End Left Side -->
+
+                <div class="f-links-top-right">
+                  <div class="f-links-top-right-top">
+                    <a href="{{ settings.link_3_modalid }}">{{ settings.link_3_text }}</a>
+                  </div>
+
+                  <div class="f-links-top-right-bottom">
+                    <div class="socials">
+                      <div class="socials-item left-side">
+                        <a class="left-bordered" href="{{ settings.soc_icon_1_url }}" {% if settings.soc_icon_1_target %}target="_blank"{% endif %}>
+                          <i class="{{ settings.soc_icon_1_name }}"></i>
+                        </a>
+                      </div><!-- End Socials Item-->
+                      <div class="socials-item right-side">
+                        <a class="right-bordered" href="{{ settings.soc_icon_2_url }}" {% if settings.soc_icon_2_target %}target="_blank"{% endif %}>
+                          <i class="{{ settings.soc_icon_2_name }}"></i>
+                        </a>
+                      </div><!-- End Socials Item-->
+                    </div><!-- End Socials Wrapper -->
+                  </div>
+                </div><!-- End Right Side -->
+              </div><!-- End Top -->
+
+              <div class="f-links-bottom">
+                <div class="f-links-bottom-left">
+                  <a href="{{ settings.link_4_modalid }}" uk-toggle>{{ settings.link_4_text }}</a>
+                </div>
+
+                <div class="f-links-bottom-right">
+                  <div class="socials">
+                    <div class="socials-item left-side">
+                      <a class="left-bordered" href="{{ settings.soc_icon_3_url }}" {% if settings.soc_icon_3_target %}target="_blank"{% endif %}>
+                        <i class="{{ settings.soc_icon_3_name }}"></i>
+                      </a>
+                    </div><!-- End Socials Item-->
+                    <div class="socials-item right-side">
+                      <a class="right-bordered" href="{{ settings.soc_icon_4_url }}" {% if settings.soc_icon_4_target %}target="_blank"{% endif %}>
+                        <i class="{{ settings.soc_icon_4_name }}"></i>
+                      </a>
+                    </div><!-- End Socials Item-->
+                  </div><!-- End Socials Wrapper -->
+                </div>
+              </div><!-- End Bottom -->
+            </div><!-- End F Links -->           
+        
+            <!-- Begin Footer Links Mobile -->
+            <div class="footer-links-mobile">
+              <div class="footer-links-mobile-wrapper">
+                {% if settings.fl_1_show == 'yes' %}
+                <div class="footer-links-mobile-item item-1">
+                  <a href="#{{ settings.fl_1_modalID }}" uk-toggle>
+                    {{ settings.fl_1_name }}
+                  </a>
+                </div>
+                {% endif %}
+                
+                {% if settings.fl_2_show == 'yes' %}
+                <div class="footer-links-mobile-item item-2">
+                  <a href="#{{ settings.fl_2_modalID }}" uk-toggle>
+                    {{ settings.fl_2_name }}
+                  </a>
+                </div>
+                {% endif %}
+                
+                {% if settings.fl_3_show == 'yes' %}
+                <div class="footer-links-mobile-item item-3">
+                  <a href="#{{ settings.fl_3_modalID }}" uk-toggle>
+                    {{ settings.fl_3_name }}
+                  </a>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+            <!-- End Footer Links Mobile -->
+            
+          </div><!-- End Col Right -->
+        </div>            
+      </div><!-- End Footer Right -->
+      
+    </div><!-- End Side Right -->
+
+  </div><!-- End Col Wrapper -->
+</div><!-- End Sec BG -->

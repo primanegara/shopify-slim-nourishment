@@ -1,0 +1,117 @@
+{% assign row = section.settings %}
+
+{% if row.block_title != blank %}
+<h2 class="main-title text-center">
+  {{ row.block_title }}
+</h2>
+{% endif %}
+
+<div class="products-featured-collections">
+  <div class="products-featured-collections-inner">
+    <ul>
+      {% for block in section.blocks %}
+        {% if block.type == 'items_categories' %}
+          {%- assign show = block.settings.show -%}
+          {%- assign collection = collections[block.settings.item_name] -%}
+          {% if block.settings.item_show == 'yes' %}
+          <li>
+            {% comment %}
+            <a href="{{ collection.url }}"></a>
+            {% endcomment %}
+            
+            <a href="#modal-prodcol-{{ collection.id }}" uk-toggle>
+              {{ collection.title }}
+            </a>
+          </li>
+          {% endif %}
+      	{% endif %}
+      {% endfor %}     
+    </ul>
+  </div> 
+</div>
+
+
+{% for block in section.blocks %}
+  {%- assign data_colect = collections[block.settings.item_name] -%}
+
+  <!-- Modal: Product by Collection -->
+  <div id="modal-prodcol-{{ data_colect.id }}" uk-modal="stack: true" class="modal-rightside-wrapper">
+    <div class="uk-modal-dialog modal-rightside-content">
+      <button class="uk-modal-close-default modal-rightside-close-btn" type="button" uk-close>
+        <i class="icon-cross"></i>
+      </button>
+      <div class="uk-modal-body uk-height-1-1 modal-rightside-body for-common" uk-overflow-auto>
+        <div class="modal-tidy-inner">
+          <div class="modal-tidy-content">
+            <div class="products-featured-sack-wrapper">
+              <h2 class="main-title text-center">{{ data_colect.title }}</h2>
+              {% assign count = count | plus: 1 %}
+              {% if data_colect.products.size < 1 %}
+              <div class="msg-wrapper m-t-30">
+                <div class="msg-notfoundproductcollection">
+                  <p>
+                    {{ settings.msg_notfoundproductcollection }}
+                  </p>
+                </div>
+              </div>
+              {% endif %}
+              
+              <div class="products-featured-sack">
+                {% for product in data_colect.products %}
+                {% include 'card-featured-product-by-collection', product: product %}
+                {% endfor %}
+              </div><!-- End Sack -->
+            </div><!-- End Sack Wrapper -->
+          </div><!-- End Tidy Content -->
+          
+          <div class="modal-tidy-footer">
+          	{% include 'footer-links' %}
+          </div><!-- End Tidy Footer -->
+        </div><!-- End Tidy Inner -->
+      </div><!-- End Modal Body -->
+    </div><!-- End Modal Dialog -->
+  </div><!-- End Modal Wrapper -->
+  <!-- End Modal: Product by Collection -->
+{% endfor %}
+
+
+{% schema %}
+  {
+    "name": "Categories List",
+    "settings": [
+      {
+        "label": "Title",
+        "type": "text",
+        "id": "block_title"
+      }
+	],
+    "blocks": [
+      {
+        "type": "items_categories",
+        "name": "Links",
+        "settings": [
+          {
+            "label": "Category",
+            "type": "collection",
+            "id": "item_name"
+          },
+          {
+            "label": "Show",
+            "type": "select",
+            "id": "item_show",
+            "options": [ 
+              { "value": "yes", "label": "Yes"},
+              { "value": "no", "label": "No"}
+			]
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

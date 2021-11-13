@@ -1,0 +1,726 @@
+{% assign row = section.settings %}
+<style>
+  
+  @media all and (min-width: 940px){
+    .sec-bg-full .side-left .header-left .identity-name .in-col-left {
+      font-size: {{ row.slogan_fontsize_desktop }}px;
+      line-height: {{ row.slogan_lineheight_desktop }}px;
+    }
+    
+    .sec-bg-full .side-left .content-left-big-title {
+      {% if row.content_title_positionleft_desktop_minus %}left: -{{ row.content_title_positionleft_desktop }}px;{% else %}left: {{ row.content_title_positionleft_desktop }}px;{% endif %}
+    }
+    .sec-bg-full .side-left .content-left-big-title p {
+      font-size: {{ row.content_title_fontsize_desktop }}vw;
+    }
+    
+    .sec-bg-full .side-left .content-left-medium-title {
+      {% if row.content_subtitle_positionleft_desktop_minus %}left: -{{ row.content_subtitle_positionleft_desktop }}px;{% else %}left: {{ row.content_subtitle_positionleft_desktop }}px;{% endif %}
+    }
+    .sec-bg-full .side-left .content-left-medium-title p {
+      font-size: {{ row.content_subtitle_fontsize_desktop }}px;
+    }
+    
+    .sec-bg-full .side-left .content-left .hero-image {
+      {% if row.content_image_top_desktop_minus %}top: -{{ row.content_image_top_desktop }}%;{% else %}top: {{ row.content_image_top_desktop }}%;{% endif %}
+      {% if row.content_image_right_desktop_minus %}right: -{{ row.content_image_right_desktop }}%;{% else %}right: {{ row.content_image_right_desktop }}%;{% endif %}
+    }
+    .sec-bg-full .side-left .content-left .hero-image .img {
+      height: {{ row.content_image_height_size }}px;
+    }
+    
+    .sec-bg-full .side-left .content-left-link-title a {
+      font-size: {{ row.content_text_fontsize_desktop }}px;
+      line-height: {{ row.content_text_lineheight_desktop }}px;
+    }
+  }
+  
+  @media all and (max-width: 992px) {
+    .sec-bg-full .side-left .header-left .identity-name .in-col-left {
+      font-size: {{ row.slogan_fontsize_tablet }}px;
+      line-height: {{ row.slogan_lineheight_tablet }}px;
+    }
+    
+    .sec-bg-full .side-left .content-left-big-title {
+      {% if row.content_title_positionleft_tablet_minus %}left: -{{ row.content_title_positionleft_tablet }}px;{% else %}left: {{ row.content_title_positionleft_tablet }}px;{% endif %}
+    }    
+    .sec-bg-full .side-left .content-left-big-title p {
+      font-size: {{ row.content_title_fontsize_tablet }}vw;
+    }
+    
+    .sec-bg-full .side-left .content-left-medium-title {
+      {% if row.content_subtitle_positionleft_tablet_minus %}left: -{{ row.content_subtitle_positionleft_tablet }}px;{% else %}left: {{ row.content_subtitle_positionleft_tablet }}px;{% endif %}
+    }    
+    .sec-bg-full .side-left .content-left-medium-title p {
+      font-size: {{ row.content_subtitle_fontsize_tablet }}px;
+	}
+    
+    .sec-bg-full .side-left .content-left .hero-image {
+      {% if row.content_image_top_tablet_minus %}top: -{{ row.content_image_top_tablet }}%;{% else %}top: {{ row.content_image_top_tablet }}%;{% endif %}
+      {% if row.content_image_right_tablet_minus %}right: -{{ row.content_image_right_tablet }}%;{% else %}right: {{ row.content_image_right_tablet }}%;{% endif %}
+    }
+    .sec-bg-full .side-left .content-left .hero-image .img {
+      height: {{ row.content_image_height_size_tablet }}px;
+    }
+    
+    .sec-bg-full .side-left .content-left-link-title a {
+      font-size: {{ row.content_text_fontsize_tablet }}px;
+      line-height: {{ row.content_text_lineheight_tablet }}px;
+    }    
+  }
+  
+  @media all and (max-width: 480px){
+    .sec-bg-full .side-left .header-left .identity-name .in-col-left {
+      font-size: {{ row.slogan_fontsize_mobile }}px;
+      line-height: {{ row.slogan_lineheight_mobile }}px;
+    }
+    
+    .sec-bg-full .side-left .content-left-big-title {
+      {% if row.content_title_positionleft_mobile_minus %}left: -{{ row.content_title_positionleft_mobile }}px;{% else %}left: {{ row.content_title_positionleft_mobile }}px;{% endif %}
+    }    
+    .sec-bg-full .side-left .content-left-big-title p {
+      font-size: {{ row.content_title_fontsize_mobile }}vw;
+    }
+    
+    .sec-bg-full .side-left .content-left-medium-title {
+      {% if row.content_subtitle_positionleft_mobile_minus %}left: -{{ row.content_subtitle_positionleft_mobile }}px;{% else %}left: {{ row.content_subtitle_positionleft_mobile }}px;{% endif %}
+    }
+    .sec-bg-full .side-left .content-left-medium-title p {
+      font-size: {{ row.content_subtitle_fontsize_mobile }}px;
+    }
+    
+    .sec-bg-full .side-left .content-left .hero-image {
+      {% if row.content_image_top_mobile_minus %}top: -{{ row.content_image_top_mobile }}%;{% else %}top: {{ row.content_image_top_mobile }}%;{% endif %}
+      {% if row.content_image_right_mobile_minus %}right: -{{ row.content_image_right_mobile }}%;{% else %}right: {{ row.content_image_right_mobile }}%;{% endif %}
+    }
+    .sec-bg-full .side-left .content-left .hero-image .img {
+      height: {{ row.content_image_height_size_mobile }}px;
+    }
+    
+    .sec-bg-full .side-left .content-left-link-title a {
+      font-size: {{ row.content_text_fontsize_mobile }}px;
+      line-height: {{ row.content_text_lineheight_mobile }}px;
+    }
+  }
+  
+  {% if row.content_image_csscode != blank %}
+  	{{ row.content_image_csscode }}
+  {% endif %}  
+</style>
+
+<div class="header-left">
+  <div class="logo">
+    <a href="{{ row.logo_url }}">
+      <img class="logo-img" src="{{ row.logo | img_url: '300x' }}" alt="">
+    </a>
+  </div>
+  <div class="identity">
+    <div class="identity-inner">
+      <div class="identity-name primary-color">       
+        <div class="in-col-inner">
+          <div class="in-col-left">
+            {{ row.slogan }}
+          </div>
+          <div class="in-col-right">
+            <div class="cart-icon for-mobile primary-color">
+              {% include 'cart-fixed' %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="identity-brands primary-color">
+        <div class="identity-brands-item full-width">
+          <img class="img" src="{{ row.other_image | img_url: 'master' }}" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- End Header -->
+
+<div class="content-left">
+  <div class="content-left-inner">
+    <div class="content-left-big-title text-uppercase">
+      <p>
+        {{ row.content_title }}
+      </p>
+    </div>
+    <div class="content-left-medium-title text-uppercase">
+      <p>
+        {{ row.content_subtitle }}
+      </p>
+    </div>
+    <div class="content-left-link-title">
+      <a href="#{{ row.content_url }}" uk-toggle class="text-uppercase">
+        {{ row.content_text }}
+      </a>
+    </div>
+
+    <div class="hero-image">
+      <img class="img" src="{{ row.content_image | img_url: 'master' }}" alt="{{ shop.name }}" />
+    </div>
+  </div>
+</div><!-- End Content Left -->
+
+<div class="footer-left">
+  <div class="footer-left-caption primary-color">
+    <div class="text-inner">
+      <div class="text-itself">
+        {{ row.footer_text }}
+      </div>
+      <div id="footer-caption-typed" class="text-typed"></div>
+    </div>    
+    
+    <script>
+      new Typed('#footer-caption-typed', {
+        strings: [
+          {% for block in section.blocks %}
+          {% if block.type == 'items_textslide' %}
+          {% assign data_text = block.settings %}
+          '<a href="{{ data_text.item_text_slide_url }}">{{ data_text.item_text_slide }}</a>',
+          {% endif %}
+          {% endfor %}
+        ],
+        startDelay: {{ row.startDelay }},
+        fadeOut: {{ row.fadeOut }},
+        typeSpeed: {{ row.typeSpeed }},
+        backSpeed: {{ row.backSpeed }},
+        backDelay: {{ row.backDelay }},
+        loop: true,
+        showCursor: false
+      });
+    </script>
+
+  </div>
+</div><!-- End Footer Left -->
+
+{% schema %}
+  {
+    "name": "Left Content",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "image_picker",
+        "id": "logo",
+        "label": "Logo"
+      },
+      {
+        "type": "url",
+        "id": "logo_url",
+        "label": "Logo URL"
+      },
+      {
+        "type": "image_picker",
+        "id": "other_image",
+        "label": "Image"
+      },
+      {
+        "type": "header",
+        "content": "Slogan"
+      },
+      {
+        "type": "text",
+        "id": "slogan",
+        "label": "Text"
+      },
+      {
+        "type": "range",
+        "id": "slogan_fontsize_desktop",
+        "label": "Font size (Desktop)",
+        "default": 18,
+        "min": 10,
+        "max": 40,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "slogan_fontsize_tablet",
+        "label": "Font size (Tablet)",
+        "default": 16,
+        "min": 10,
+        "max": 40,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "slogan_fontsize_mobile",
+        "label": "Font size (Mobile)",
+        "default": 14,
+        "min": 10,
+        "max": 40,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "slogan_lineheight_desktop",
+        "label": "Line height (Desktop)",
+        "default": 18,
+        "min": 10,
+        "max": 40,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "slogan_lineheight_tablet",
+        "label": "Line height (Tablet)",
+        "default": 16,
+        "min": 10,
+        "max": 40,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "slogan_lineheight_mobile",
+        "label": "Line height (Mobile)",
+        "default": 14,
+        "min": 10,
+        "max": 40,
+        "step": 1
+      },
+      {
+        "type": "header",
+        "content": "Main Title"
+      },
+      {
+        "type": "richtext",
+        "id": "content_title",
+        "label": "Text"
+      },
+      {
+        "type": "range",
+        "id": "content_title_fontsize_desktop",
+        "label": "Font size (Desktop)",
+        "default": 9,
+        "min": 1,
+        "max": 40,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "content_title_fontsize_tablet",
+        "label": "Font size (Tablet)",
+        "default": 8,
+        "min": 1,
+        "max": 40,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "content_title_fontsize_mobile",
+        "label": "Font size (Mobile)",
+        "default": 7,
+        "min": 1,
+        "max": 40,
+        "step": 1
+      },
+
+
+      {
+        "type": "range",
+        "id": "content_title_positionleft_desktop",
+        "label": "Position left (Desktop)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "content_title_positionleft_desktop_minus",
+        "label": "tick to raise to the left"
+      },
+      {
+        "type": "range",
+        "id": "content_title_positionleft_tablet",
+        "label": "Position left (Tablet)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "content_title_positionleft_tablet_minus",
+        "label": "tick to raise to the left"
+      },
+      {
+        "type": "range",
+        "id": "content_title_positionleft_mobile",
+        "label": "Position left (Mobile)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "content_title_positionleft_mobile_minus",
+        "label": "tick to raise to the left"
+      },
+
+
+      {
+        "type": "header",
+        "content": "Sub Title"
+      },
+      {
+        "type": "richtext",
+        "id": "content_subtitle",
+        "label": "Text"
+      },
+      {
+        "type": "range",
+        "id": "content_subtitle_fontsize_desktop",
+        "label": "Font size (Desktop)",
+        "default": 25,
+        "min": 1,
+        "max": 80,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "content_subtitle_fontsize_tablet",
+        "label": "Font size (Tablet)",
+        "default": 22,
+        "min": 1,
+        "max": 80,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "content_subtitle_fontsize_mobile",
+        "label": "Font size (Mobile)",
+        "default": 20,
+        "min": 1,
+        "max": 80,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "content_subtitle_positionleft_desktop",
+        "label": "Position left (Desktop)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "content_subtitle_positionleft_desktop_minus",
+        "label": "tick to raise to the left"
+      },
+      {
+        "type": "range",
+        "id": "content_subtitle_positionleft_tablet",
+        "label": "Position left (Tablet)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "content_subtitle_positionleft_tablet_minus",
+        "label": "tick to raise to the left"
+      },
+      {
+        "type": "range",
+        "id": "content_subtitle_positionleft_mobile",
+        "label": "Position left (Mobile)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "content_subtitle_positionleft_mobile_minus",
+        "label": "tick to raise to the left"
+      },
+
+
+      {
+        "type": "header",
+        "content": "Hero image"
+      },
+      {
+        "type": "image_picker",
+        "id": "content_image",
+        "label": "Image"
+      },
+      {
+        "type": "range",
+        "id": "content_image_height_size",
+        "label": "Image set height (Desktop)",
+        "default": 500,
+        "min": 400,
+        "max": 1200,
+        "step": 10
+      },
+      {
+        "type": "range",
+        "id": "content_image_height_size_tablet",
+        "label": "Image set height (Tablet)",
+        "default": 500,
+        "min": 400,
+        "max": 1200,
+        "step": 10
+      },
+      {
+        "type": "range",
+        "id": "content_image_height_size_mobile",
+        "label": "Image set height (Mobile)",
+        "default": 300,
+        "min": 200,
+        "max": 1200,
+        "step": 10
+      },
+      {
+        "type": "header",
+        "content": "Position: Top"
+      },
+      {
+        "type": "range",
+        "id": "content_image_top_desktop",
+        "label": "(Desktop)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "content_image_top_desktop_minus",
+        "label": "tick to raise to top"
+      },
+      {
+        "type": "range",
+        "id": "content_image_top_tablet",
+        "label": "(Tablet)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "content_image_top_tablet_minus",
+        "label": "tick to raise to top"
+      },
+      {
+        "type": "range",
+        "id": "content_image_top_mobile",
+        "label": "(Mobile)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "content_image_top_mobile_minus",
+        "label": "tick to raise to top"
+      },
+      {
+        "type": "header",
+        "content": "Position: Right"
+      },
+      {
+        "type": "range",
+        "id": "content_image_right_desktop",
+        "label": "(Desktop)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "content_image_right_desktop_minus",
+        "label": "tick to raise to right"
+      },
+      {
+        "type": "range",
+        "id": "content_image_right_tablet",
+        "label": "(Tablet)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "content_image_right_tablet_minus",
+        "label": "tick to raise to right"
+      },
+      {
+        "type": "range",
+        "id": "content_image_right_mobile",
+        "label": "(Mobile)",
+        "default": 0,
+        "min": 0,
+        "max": 100,
+        "step": 1
+      },
+      {
+        "type": "checkbox",
+        "id": "content_image_right_mobile_minus",
+        "label": "tick to raise to right"
+      },
+      {
+        "type": "textarea",
+        "id": "content_image_csscode",
+        "label": "CSS code"
+      },
+
+
+      {
+        "type": "header",
+        "content": "Typing text animation"
+      },
+      {
+        "type": "text",
+        "id": "footer_text",
+        "label": "Text"
+      },
+      {
+        "type": "checkbox",
+        "id": "fadeOut",
+        "label": "Fade Out animate",
+		"default": false
+      },
+      {
+        "type": "range",
+        "id": "startDelay",
+        "label": "Start delay",
+        "default": 500,
+        "min": 500,
+        "max": 5000,
+        "step": 500,
+		"info": "time before typing starts in milliseconds"
+      },
+      {
+        "type": "range",
+        "id": "typeSpeed",
+        "label": "Type speed",
+        "default": 100,
+        "min": 50,
+        "max": 1000,
+        "step": 50,
+		"info": "type speed in milliseconds"
+      },
+      {
+        "type": "range",
+        "id": "backSpeed",
+        "label": "Back speed",
+        "default": 100,
+        "min": 50,
+        "max": 1000,
+        "step": 50,
+		"info": "backspacing speed in milliseconds"
+      },
+      {
+        "type": "range",
+        "id": "backDelay",
+        "label": "Back delay",
+        "default": 4000,
+        "min": 4000,
+        "max": 5000,
+        "step": 100,
+		"info": "time before backspacing in milliseconds"
+      },
+
+
+      {
+        "type": "header",
+        "content": "Other"
+      },
+      {
+        "type": "text",
+        "id": "content_text",
+        "label": "Link text"
+      },
+      {
+        "type": "text",
+        "id": "content_url",
+        "label": "URL",
+        "info": "DON'T Change: modal-quiz-lvl-1",
+        "default": "modal-quiz-lvl-1"
+      },
+      {
+        "type": "range",
+        "id": "content_text_fontsize_desktop",
+        "label": "Font size (Desktop)",
+        "default": 18,
+        "min": 10,
+        "max": 40,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "content_text_fontsize_tablet",
+        "label": "Font size (Tablet)",
+        "default": 16,
+        "min": 10,
+        "max": 40,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "content_text_fontsize_mobile",
+        "label": "Font size (Mobile)",
+        "default": 14,
+        "min": 10,
+        "max": 40,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "content_text_lineheight_desktop",
+        "label": "Line height (Desktop)",
+        "default": 18,
+        "min": 10,
+        "max": 40,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "content_text_lineheight_tablet",
+        "label": "Line height (Tablet)",
+        "default": 16,
+        "min": 10,
+        "max": 40,
+        "step": 1
+      },
+      {
+        "type": "range",
+        "id": "content_text_lineheight_mobile",
+        "label": "Line height (Mobile)",
+        "default": 14,
+        "min": 10,
+        "max": 40,
+        "step": 1
+      }
+	],
+	"blocks": [
+      {
+        "type": "items_textslide",
+        "name": "Text Slide",
+        "settings": [
+          {
+            "label": "Text",
+            "type": "text",
+            "id": "item_text_slide"
+          },
+          {
+            "label": "URL",
+            "type": "url",
+            "id": "item_text_slide_url"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

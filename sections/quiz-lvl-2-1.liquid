@@ -1,0 +1,99 @@
+{%- assign row = section.settings -%}
+
+<div id="modal-quiz-lvl-2-1" uk-modal class="modal-rightside-wrapper">
+  <div class="uk-modal-dialog modal-rightside-content">
+    <button class="uk-modal-close-default modal-rightside-close-btn" type="button" uk-close>
+      <i class="icon-cross"></i>
+    </button>
+    <div class="uk-modal-body uk-height-1-1 modal-rightside-body for-common" uk-overflow-auto>
+      <div class="static-content-quiz text-center">
+        <div class="static-content-quiz-inner">
+          <h2 class="top-title text-center">
+            {{ row.block_title }}
+          </h2>
+
+          <div class="box-quiz">
+            <div class="box-quiz-inner">
+              <div class="box-quiz-title">
+                {{ row.block_text }}
+              </div>
+              <div class="box-quiz-text">
+                {{ row.block_short_text }}
+              </div>
+              <div class="box-quiz-option">
+                <div class="box-quiz-option-yes primary-color">
+                  <a href="{{ row.btn_1_url }}">{{ row.btn_1_text }}</a>
+                </div>
+                <div class="box-quiz-option-no primary-color">
+                  <a href="{{ row.btn_2_url }}">{{ row.btn_2_text }}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% include 'footer-links' %}
+    </div><!-- End Modal Body -->
+  </div><!-- End Modal Dialog -->
+</div><!-- End Modal Wrapper -->  
+
+{% schema %}
+  {
+    "name": "Quiz (#2.1)",
+    "settings": [
+      {
+        "type": "text",
+        "id": "block_title",
+        "label": "Title"
+      },
+      {
+        "type": "header",
+        "content": "Box Content"
+      },
+      {
+        "type": "text",
+        "id": "block_text",
+        "label": "Text"
+      },
+      {
+        "type": "richtext",
+        "id": "block_short_text",
+        "label": "Short Text"
+      },
+      {
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
+        "type": "text",
+        "id": "btn_1_text",
+        "label": "Text",
+		"default": "Yes"
+      },
+      {
+        "type": "url",
+        "id": "btn_1_url",
+        "label": "URL",
+		"info": "Choose page 'Pages/Quiz Subscribe 1'"
+      },
+      {
+        "type": "text",
+        "id": "btn_2_text",
+        "label": "Text",
+		"default": "No"
+      },
+      {
+        "type": "url",
+        "id": "btn_2_url",
+        "label": "URL",
+		"info": "Choose page 'Pages/Quiz Subscribe 2'"
+      }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

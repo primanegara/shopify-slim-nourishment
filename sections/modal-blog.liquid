@@ -1,0 +1,32 @@
+{% assign row = section.settings %}
+
+{% if row.block_show != 'yes' %}
+  {% if row.block_title != blank %}
+  <h2 class="main-title text-center">
+    {{ row.block_title }}
+  </h2>
+  {% endif %}
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Blog (Modal)",
+    "settings": [
+      {
+        "label": "Block title",
+        "type": "text",
+        "id": "block_title",
+	    	"default": "Blog"
+      },
+      {
+        "label": "Show",
+        "type": "select",
+        "id": "block_show",
+        "options": [ 
+          { "value": "yes", "label": "Yes"},
+          { "value": "no", "label": "No"}
+		    ]
+      }
+	  ]
+  }
+{% endschema %}

@@ -1,0 +1,139 @@
+{%- assign row = section.settings -%}
+{%- assign autoplay = row.autoplay -%}
+{%- assign smart_speed = row.smart_speed -%}
+{%- assign autoplay_timeout = row.autoplay_timeout -%}
+{%- assign autoplay_speed = row.autoplay_speed -%}
+
+<div id="cit_toptitle" class="carousel-thumbs-wrapper-title-wrapper">
+  <div class="item-title">
+    {{ row.iwt_title }}
+  </div>
+</div>
+
+<div class="carousel-thumbs owl-carousel owl-theme">
+  {% for block in section.blocks %}
+  {%- assign data = block.settings -%}
+  {%- assign iwt_text = data.iwt_text -%}
+  {%- assign iwt_image = data.iwt_image | img_url: 'x330' -%}
+
+    <div class="item-wrapper">
+      <div class="item-col-fullwidth">
+        {% comment %}
+        <div class="item-img for-img">
+          <img src="{{ iwt_image }}" alt="{{ data.iwt_text }}" />
+        </div>
+        {% endcomment %}
+        <div class="item-img for-cover cit_item_img" style="background-image: url({{ iwt_image }})"></div>        
+        <div id="cit_bottomtitle" class="item-desc">
+          <p>
+            {{ iwt_text }}
+          </p>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div><!-- End Owl Carousel -->
+
+
+{% schema %}
+  {
+    "name": "Carousel Image with Title",
+	"max_blocks": 10,
+    "settings": [
+      {
+        "type": "text",
+        "id": "iwt_title",
+        "label": "Title"
+      },
+      {
+        "type": "header",
+        "content": "Carousel config"
+      },
+      {
+        "type": "checkbox",
+        "id": "autoplay",
+        "label": "Autoplay",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "smart_speed",
+        "label": "Smart speed",
+        "default": 500,
+        "min": 300,
+        "max": 1000,
+        "step": 100,
+        "info": "default: 500"
+      },
+      {
+        "type": "range",
+        "id": "autoplay_timeout",
+        "label": "Autoplay timeout",
+        "default": 4500,
+        "min": 2000,
+        "max": 6000,
+        "step": 500,
+        "info": "default: 4500"
+      },
+      {
+        "type": "range",
+        "id": "autoplay_speed",
+        "label": "Autoplay speed",
+        "default": 400,
+        "min": 200,
+        "max": 1000,
+        "step": 100,
+        "info": "default: 400"
+      }
+	],
+	"blocks": [{
+      "type": "carousel_imagewithtitle",
+      "name": "Item",
+      "settings": [
+          {
+            "type": "image_picker",
+            "id": "iwt_image",
+            "label": "Image",
+			"info": "Size must be 570x340 in pixel"
+          },
+          {
+            "type": "text",
+            "id": "iwt_text",
+            "label": "Text"
+          }
+        ]
+	}]
+  }
+{% endschema %}
+
+<script>
+  window.addEventListener("orientationchange", function() {
+    location.reload();
+  });
+  
+  $('.carousel-thumbs').owlCarousel({
+    loop: true,
+    items: 1,
+    nav: true,
+    dots: false,
+    autoplay: {{ autoplay }},
+    smartSpeed: {{ smart_speed }},
+    autoplayTimeout: {{ autoplay_timeout }},
+    autoplaySpeed: {{ autoplay_speed }},    
+    navText: ['<span class="icon-keyboard-arrow-left"></span>','<span class="icon-keyboard-arrow-right"></span>'],
+  });
+
+  $(document).ready(function () {
+    if ($(window).width() > 992) {
+      var cit_toptitle = $('#cit_toptitle').height() + 20;
+      var cit_bottomtitle = $('#cit_bottomtitle').height();
+      var cit_carousel = $('#footer-right').height();
+      var cit_lesshight = cit_toptitle + cit_bottomtitle;
+      var cit_totalheight = cit_carousel - cit_lesshight;
+
+      $(".cit_item_img").css("height", cit_totalheight + "px");
+      /* console.log(cit_toptitle + ' - ' + cit_carousel + ' - ' + cit_bottomtitle);
+      console.log('Result' + cit_totalheight); */
+    }
+  });
+</script>

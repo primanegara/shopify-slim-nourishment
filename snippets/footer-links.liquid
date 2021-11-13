@@ -1,0 +1,39 @@
+<div class="main-footer">
+  <div class="main-footer-links">
+    <ul>
+      {% if settings.fl_1_show == 'yes' %}
+      <li>
+        <a href="#{{ settings.fl_1_modalID }}" uk-toggle>
+          {{ settings.fl_1_name }}
+        </a>
+      </li>
+      {% endif %}
+      {% if settings.fl_2_show == 'yes' %}
+      <li>
+        <a href="#{{ settings.fl_2_modalID }}" uk-toggle>
+          {{ settings.fl_2_name }}
+        </a>
+      </li>
+      {% endif %}
+      {% if settings.fl_3_show == 'yes' %}
+      <li>
+        <a href="#{{ settings.fl_3_modalID }}" uk-toggle>
+          {{ settings.fl_3_name }}
+        </a>
+      </li>
+      {% endif %}
+      {% if settings.fl_4_show == 'yes' %}
+      <li>
+        <a href="#{{ settings.fl_4_modalID }}" uk-toggle>
+          {{ settings.fl_4_name }}
+        </a>
+      </li>
+      {% endif %}    
+    </ul>
+  </div>
+  {% if settings.copyright_text != blank %}
+  <div class="main-footer-copyright" style="font-size:{{ settings.copyright_fontsize }}px">
+    <p>{{settings.copyright_text }}</p>
+  </div>
+  {% endif %}
+</div>
