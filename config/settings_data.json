@@ -7,13 +7,12 @@
     "preloader_width": 50,
     "preloader_height": 50,
     "blog_index_title": "Blog",
-    "sf_title": "<p>BE IN THE KNOW: GET NOTIFIED OF OUR LATEST DIET BLOG POSTS</p>",
-    "sf_notes": "<p>^ YOU WILL BE ADDED TO OUR MAILING LIST. <br/> OPT OUT ANY TIME.</p>",
-    "link_1_text": "<p>View All Diet <br/>Guides&gt;&gt;&gt;</p>",
+    "sf_title": "<p>BE IN THE KNOW: GET NOTIFIED OF OUR LATEST DIET BLOG POSTS<\/p>",
+    "sf_notes": "<p>^ YOU WILL BE ADDED TO OUR MAILING LIST. <br\/> OPT OUT ANY TIME.<\/p>",
+    "link_1_text": "<p>View All Diet <br\/>Guides&gt;&gt;&gt;<\/p>",
     "link_3_text": "BLOG",
-    "link_3_modalid": "shopify://blogs/news",
+    "link_3_modalid": "shopify:\/\/blogs\/news",
     "copyright_text": "",
-    "copyright_url": "https:\/\/startupstreams.com",
     "copyright_fontsize": 15,
     "enable_ajax": false,
     "checkout_logo_image": "shopify:\/\/shop_images\/Logo_48.png",
@@ -25,6 +24,7 @@
     "checkout_body_font": "Open Sans",
     "checkout_accent_color": "#e3f28c",
     "checkout_button_color": "#e3f28c",
+    "copyright_url": "https:\/\/startupstreams.com",
     "icon_facebook": "",
     "url_facebook": "",
     "targetblank_facebook": false,
@@ -57,7 +57,7 @@
         "settings": {
           "layout": "left",
           "title": "Image with text",
-          "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
           "button_label": ""
         }
       },
@@ -69,7 +69,7 @@
             "settings": {
               "enable_image": true,
               "title": "Add a title or tagline",
-              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>",
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
               "button_label": ""
             }
           },
@@ -78,7 +78,7 @@
             "settings": {
               "enable_image": true,
               "title": "Add a title or tagline",
-              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>",
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
               "button_label": ""
             }
           },
@@ -87,7 +87,7 @@
             "settings": {
               "enable_image": true,
               "title": "Add a title or tagline",
-              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.</p>",
+              "text": "<p>Share blog posts, products, or promotions with your customers. Use this text to describe products, share details on availability and style, or as a space to display recent reviews or FAQs.<\/p>",
               "button_label": ""
             }
           }
@@ -119,21 +119,21 @@
           "quotes-0": {
             "type": "quote",
             "settings": {
-              "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+              "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
               "author": "Author's name"
             }
           },
           "quotes-1": {
             "type": "quote",
             "settings": {
-              "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+              "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
               "author": "Author's name"
             }
           },
           "quotes-2": {
             "type": "quote",
             "settings": {
-              "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+              "quote": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
               "author": "Author's name"
             }
           }
@@ -198,21 +198,21 @@
             "type": "items_textslide",
             "settings": {
               "item_text_slide": "WEIGHT LOSS",
-              "item_text_slide_url": "shopify://products/28-day-keto-diet-vol-2"
+              "item_text_slide_url": "shopify:\/\/products\/28-day-keto-diet-vol-2"
             }
           },
           "0b3f88df-4cd9-43bd-bf80-7856c7e36375": {
             "type": "items_textslide",
             "settings": {
               "item_text_slide": "A HEALTHY LIFESTYLE",
-              "item_text_slide_url": "shopify://products/28-day-keto-diet-vol-1"
+              "item_text_slide_url": "shopify:\/\/products\/28-day-keto-diet-vol-1"
             }
           },
           "f734ddcf-f337-481f-8f61-f4fc4f46a95d": {
             "type": "items_textslide",
             "settings": {
               "item_text_slide": "EATING LIKE OUR ANCESTORS",
-              "item_text_slide_url": "shopify://products/28-day-1500-low-calorie-diet-guide"
+              "item_text_slide_url": "shopify:\/\/products\/28-day-1500-low-calorie-diet-guide"
             }
           }
         },
@@ -224,7 +224,7 @@
         "settings": {
           "logo": "shopify:\/\/shop_images\/Logo_48.png",
           "logo_url": "\/",
-          "other_image": "shopify://shop_images/As_Seen_In.png",
+          "other_image": "shopify:\/\/shop_images\/As_Seen_In.png",
           "slogan": "AS SEEN IN...",
           "slogan_fontsize_desktop": 20,
           "slogan_fontsize_tablet": 20,
@@ -232,7 +232,7 @@
           "slogan_lineheight_desktop": 18,
           "slogan_lineheight_tablet": 16,
           "slogan_lineheight_mobile": 14,
-          "content_title": "<p>FIND<br/>YOUR<br/>PERFECT<br/>DIET</p>",
+          "content_title": "<p>FIND<br\/>YOUR<br\/>PERFECT<br\/>DIET<\/p>",
           "content_title_fontsize_desktop": 9,
           "content_title_fontsize_tablet": 8,
           "content_title_fontsize_mobile": 20,
@@ -242,7 +242,7 @@
           "content_title_positionleft_tablet_minus": true,
           "content_title_positionleft_mobile": 6,
           "content_title_positionleft_mobile_minus": true,
-          "content_subtitle": "<p>TAKE OUR QUIZ AND GET</p><p>$15 OFF YOUR FIRST ORDER</p>",
+          "content_subtitle": "<p>TAKE OUR QUIZ AND GET<\/p><p>$15 OFF YOUR FIRST ORDER<\/p>",
           "content_subtitle_fontsize_desktop": 40,
           "content_subtitle_fontsize_tablet": 35,
           "content_subtitle_fontsize_mobile": 30,
@@ -252,7 +252,7 @@
           "content_subtitle_positionleft_tablet_minus": false,
           "content_subtitle_positionleft_mobile": 0,
           "content_subtitle_positionleft_mobile_minus": false,
-          "content_image": "shopify://shop_images/Bottle_-_Homepage_Top_Image.png",
+          "content_image": "shopify:\/\/shop_images\/Bottle_-_Homepage_Top_Image.png",
           "content_image_height_size": 520,
           "content_image_height_size_tablet": 500,
           "content_image_height_size_mobile": 300,
@@ -294,7 +294,7 @@
       "modal-about": {
         "type": "modal-about",
         "settings": {
-          "page_id": "about-us",
+          "page_id": "about",
           "show": "yes"
         }
       },
@@ -364,7 +364,7 @@
       "modal-privacy": {
         "type": "modal-privacy",
         "settings": {
-          "page_id": "privacy",
+          "page_id": "about-1",
           "show": "yes"
         }
       },
@@ -792,14 +792,17 @@
         }
       }
     },
-    "content_for_index": []
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Default": {
       "sections": {
         "header": {
           "type": "header",
-          "settings": {}
+          "settings": {
+          }
         },
         "hero-1": {
           "type": "hero",
@@ -810,22 +813,26 @@
         },
         "feature-row": {
           "type": "feature-row",
-          "settings": {}
+          "settings": {
+          }
         },
         "feature-columns": {
           "type": "feature-columns",
           "blocks": {
             "feature-columns-0": {
               "type": "text_block",
-              "settings": {}
+              "settings": {
+              }
             },
             "feature-columns-1": {
               "type": "text_block",
-              "settings": {}
+              "settings": {
+              }
             },
             "feature-columns-2": {
               "type": "text_block",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -854,15 +861,18 @@
           "blocks": {
             "quotes-0": {
               "type": "quote",
-              "settings": {}
+              "settings": {
+              }
             },
             "quotes-1": {
               "type": "quote",
-              "settings": {}
+              "settings": {
+              }
             },
             "quotes-2": {
               "type": "quote",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -879,15 +889,18 @@
           "blocks": {
             "image-bar-0": {
               "type": "image",
-              "settings": {}
+              "settings": {
+              }
             },
             "image-bar-1": {
               "type": "image",
-              "settings": {}
+              "settings": {
+              }
             },
             "image-bar-2": {
               "type": "image",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -895,18 +908,21 @@
             "image-bar-1",
             "image-bar-2"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "footer": {
           "type": "footer",
           "blocks": {
             "footer-0": {
               "type": "link_list",
-              "settings": {}
+              "settings": {
+              }
             },
             "footer-1": {
               "type": "newsletter",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -1057,20 +1073,23 @@
         },
         "1492033809691": {
           "type": "map",
-          "settings": {}
+          "settings": {
+          }
         },
         "1492033877875": {
           "type": "quotes",
           "blocks": {
             "1492033877875-0": {
               "type": "quote",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
             "1492033877875-0"
           ],
-          "settings": {}
+          "settings": {
+          }
         },
         "1492033924902": {
           "type": "custom-content",
@@ -1096,15 +1115,18 @@
           "blocks": {
             "1492096252560-0": {
               "type": "featured_collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "1492096252560-1": {
               "type": "featured_collection",
-              "settings": {}
+              "settings": {
+              }
             },
             "1492096252560-2": {
               "type": "featured_collection",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
@@ -1143,15 +1165,18 @@
           "blocks": {
             "link_list": {
               "type": "link_list",
-              "settings": {}
+              "settings": {
+              }
             },
             "text": {
               "type": "text",
-              "settings": {}
+              "settings": {
+              }
             },
             "newsletter": {
               "type": "newsletter",
-              "settings": {}
+              "settings": {
+              }
             }
           },
           "block_order": [
